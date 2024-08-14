@@ -3,15 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.Cbu", "ClipboardUtil.Cbu\ClipboardUtil.Cbu.csproj", "{BB444446-A333-434D-87E5-F73C0C9F8DD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.Cbu", "ClipboardUtil.Cbu\ClipboardUtil.Cbu.csproj", "{BB444446-A333-434D-87E5-F73C0C9F8DD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.Core", "ClipboardUtil.Core\ClipboardUtil.Core.csproj", "{4F48DC36-897F-46E7-B6E9-D6ABBB386C1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.Core", "ClipboardUtil.Core\ClipboardUtil.Core.csproj", "{4F48DC36-897F-46E7-B6E9-D6ABBB386C1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.Tests", "ClipboardUtil.Tests\ClipboardUtil.Tests.csproj", "{99B0E966-F002-4B3F-B267-EF008709EF79}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.MqttConsoleApp", "ClipboardUtil.MqttConsoleApp\ClipboardUtil.MqttConsoleApp.csproj", "{8A6AE282-183D-46FD-8137-676018F09105}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.csharpMQTT", "ClipboardUtil.csharpMQTT\ClipboardUtil.csharpMQTT.csproj", "{60A0238E-D48B-4375-AE83-BBEBD64C872B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.Tests", "ClipboardUtil.Tests\ClipboardUtil.Tests.csproj", "{99B0E966-F002-4B3F-B267-EF008709EF79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,14 +27,6 @@ Global
 		{99B0E966-F002-4B3F-B267-EF008709EF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99B0E966-F002-4B3F-B267-EF008709EF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99B0E966-F002-4B3F-B267-EF008709EF79}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A6AE282-183D-46FD-8137-676018F09105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A6AE282-183D-46FD-8137-676018F09105}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A6AE282-183D-46FD-8137-676018F09105}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A6AE282-183D-46FD-8137-676018F09105}.Release|Any CPU.Build.0 = Release|Any CPU
-		{60A0238E-D48B-4375-AE83-BBEBD64C872B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60A0238E-D48B-4375-AE83-BBEBD64C872B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60A0238E-D48B-4375-AE83-BBEBD64C872B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60A0238E-D48B-4375-AE83-BBEBD64C872B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
