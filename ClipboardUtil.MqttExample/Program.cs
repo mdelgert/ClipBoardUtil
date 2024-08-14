@@ -29,6 +29,7 @@ namespace MQTTConsoleApp
             Console.WriteLine("2. Send Responses");
             Console.WriteLine("3. Subscribe to Multiple Topics");
             Console.WriteLine("4. Subscribe to a Topic");
+            Console.WriteLine("5. Send simple message");
 
             var choice = Console.ReadLine();
 
@@ -46,6 +47,9 @@ namespace MQTTConsoleApp
                 case "4":
                     await ClientSubscribeSamples.SubscribeTopic(server, port, username, password, topic1);
                     break;
+                case "5":
+                    await ClientSubscribeSamples.SendSimpleMessage(server, port, username, password, topic1);
+                    break;
                 default:
                     Console.WriteLine("Invalid choice.");
                     break;
@@ -58,6 +62,31 @@ namespace MQTTConsoleApp
 
     public static class ClientSubscribeSamples
     {
+        public static async Task SendSimpleMessage(string server, int port, string username, string password, string topic)
+        {
+            var mqttFactory = new MqttFactory();
+
+            using (var mqttClient = mqttFactory.CreateMqttClient())
+            {
+                var mqttClientOptions = new MqttClientOptionsBuilder()
+                    .WithTcpServer(server, port)
+                    .WithCredentials(username, password)
+                    .Build();
+
+                await mqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
+
+                var message = new MqttApplicationMessageBuilder()
+                    .WithTopic(topic)
+                    .WithPayload("{\"msg\": \"helloX\"}")
+                    .WithQualityOfServiceLevel(MqttQualityOfServiceLevel.AtLeastOnce)
+                    .Build();
+
+                await mqttClient.PublishAsync(message, CancellationToken.None);
+
+                Console.WriteLine($"Message sent to topic: {topic}");
+            }
+        }
+
         public static async Task HandleReceivedApplicationMessage(string server, int port, string username, string password, string topic)
         {
             var mqttFactory = new MqttFactory();
