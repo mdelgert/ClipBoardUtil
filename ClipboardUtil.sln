@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.Core", "Clipb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.Tests", "ClipboardUtil.Tests\ClipboardUtil.Tests.csproj", "{99B0E966-F002-4B3F-B267-EF008709EF79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.MqttConsoleApp", "ClipboardUtil.MqttConsoleApp\ClipboardUtil.MqttConsoleApp.csproj", "{8A6AE282-183D-46FD-8137-676018F09105}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.csharpMQTT", "ClipboardUtil.csharpMQTT\ClipboardUtil.csharpMQTT.csproj", "{60A0238E-D48B-4375-AE83-BBEBD64C872B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{99B0E966-F002-4B3F-B267-EF008709EF79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99B0E966-F002-4B3F-B267-EF008709EF79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99B0E966-F002-4B3F-B267-EF008709EF79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A6AE282-183D-46FD-8137-676018F09105}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A6AE282-183D-46FD-8137-676018F09105}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A6AE282-183D-46FD-8137-676018F09105}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A6AE282-183D-46FD-8137-676018F09105}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60A0238E-D48B-4375-AE83-BBEBD64C872B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60A0238E-D48B-4375-AE83-BBEBD64C872B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60A0238E-D48B-4375-AE83-BBEBD64C872B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60A0238E-D48B-4375-AE83-BBEBD64C872B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
