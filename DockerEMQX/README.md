@@ -8,3 +8,11 @@ docker-compose up -d
 http://localhost:18083/
 
 # Default user 'admin' and pass 'public'
+
+# Client
+https://mqttx.app/downloads?os=windows
+
+# First steps
+Go to authentication
+Add database authentication
+Go to user managment and add new user
