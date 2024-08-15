@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
+using System.Security.Authentication;
 
 namespace ClipboardUtil.MqttSimple
 {
@@ -22,6 +23,19 @@ namespace ClipboardUtil.MqttSimple
                 var mqttClientOptions = new MqttClientOptionsBuilder()
                     .WithTcpServer(server, port)
                     .WithCredentials(username, password)
+
+                    //.WithTlsOptions(
+                    //o =>
+                    //{
+                    //    // The used public broker sometimes has invalid certificates.
+                    //    // This sample accepts all certificates. This should not be used in live environments.
+                    //    // Works with EMQX platform
+                    //    o.WithCertificateValidationHandler(_ => true);
+
+                    //    // The default value is determined by the OS. Set manually to force version.
+                    //    o.WithSslProtocols(SslProtocols.Tls12);
+                    //})
+
                     .Build();
 
                 await mqttClient.ConnectAsync(mqttClientOptions, CancellationToken.None);
