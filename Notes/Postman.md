@@ -6,3 +6,5 @@ https://learning.postman.com/docs/sending-requests/mqtt-client/first-mqtt-reques
 # Working postman version 10.24.16
 https://dl.pstmn.io/download/version/10.24.16/win64
 
+# Postman has a bug right now keeps auto upgrading to the latest version. MQTTX is better client.
+https://mqttx.app/
