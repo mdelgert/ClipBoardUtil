@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Security.Authentication;
 
+//https://www.emqx.com/en/blog/connecting-to-serverless-mqtt-broker-with-mqttnet-in-csharp
+
 namespace ClipboardUtil.MqttSimple
 {
     public static class ClientSubscribeSamples
