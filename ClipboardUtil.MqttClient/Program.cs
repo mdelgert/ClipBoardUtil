@@ -1,6 +1,7 @@
 ﻿using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using Microsoft.Extensions.Configuration;
 using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Protocol;
@@ -11,12 +12,21 @@ namespace ClipboardUtil.MqttClient
     {
         static async Task Main(string[] args)
         {
-            string broker = "******.emqxsl.com";
-            int port = 8883;
-            string clientId = Guid.NewGuid().ToString();
-            string topic = "Csharp/mqtt";
-            string username = "test";
-            string password = "password";
+            // Load configuration from appsettings.json
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
+
+            var mqttSettings = configuration.GetSection("MqttSettings").Get<MqttSettings>();
+
+            string broker = mqttSettings.Broker;
+            int port = mqttSettings.Port;
+            string clientId = mqttSettings.ClientId ?? Guid.NewGuid().ToString();
+            string topic = mqttSettings.Topic;
+            string username = mqttSettings.Username;
+            string password = mqttSettings.Password;
+            string certificatePath = mqttSettings.CertificatePath;
 
             // Create a MQTT client factory
             var factory = new MqttFactory();
@@ -40,9 +50,9 @@ namespace ClipboardUtil.MqttClient
                         // The default value is determined by the OS. Set manually to force version.
                         o.SslProtocol = SslProtocols.Tls12;
 
-                        // Please provide the file path of your certificate file. The current directory is /bin.
-                        var certificate = new X509Certificate("/opt/emqxsl-ca.crt", "");
-                        o.Certificates = new List<X509Certificate> { certificate };
+                        // Please provide the file path of your certificate file.
+                        //var certificate = new X509Certificate(certificatePath, "");
+                        //o.Certificates = new List<X509Certificate> { certificate };
                     }
                 )
                 .Build();
@@ -87,5 +97,16 @@ namespace ClipboardUtil.MqttClient
                 Console.WriteLine($"Failed to connect to MQTT broker: {connectResult.ResultCode}");
             }
         }
+    }
+
+    public class MqttSettings
+    {
+        public string Broker { get; set; }
+        public int Port { get; set; }
+        public string ClientId { get; set; }
+        public string Topic { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string CertificatePath { get; set; }
     }
 }
