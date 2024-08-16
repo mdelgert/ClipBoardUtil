@@ -34,27 +34,32 @@ namespace ClipboardUtil.MqttClient
             // Create a MQTT client instance
             var mqttClient = factory.CreateMqttClient();
 
+            //TODO would need to convert PathTotext
+            X509Certificate2Collection caChain = new X509Certificate2Collection();
+            string cert = File.ReadAllText(certificatePath);
+            caChain.ImportFromPem(cert);
+
             // Create MQTT client options
             var options = new MqttClientOptionsBuilder()
                 .WithTcpServer(broker, port) // MQTT broker address and port
                 .WithCredentials(username, password) // Set username and password
                 .WithClientId(clientId)
                 .WithCleanSession()
-                .WithTls(
-                    o =>
-                    {
-                        // The used public broker sometimes has invalid certificates. This sample accepts all
-                        // certificates. This should not be used in live environments.
-                        o.CertificateValidationHandler = _ => true;
+                .WithTlsOptions(
+                o =>
+                {
+                    // The used public broker sometimes has invalid certificates.
+                    // This sample accepts all certificates. This should not be used in live environments.
+                    // Works with EMQX platform
+                    o.WithCertificateValidationHandler(_ => true);
 
-                        // The default value is determined by the OS. Set manually to force version.
-                        o.SslProtocol = SslProtocols.Tls12;
+                    // The default value is determined by the OS. Set manually to force version.
+                    o.WithSslProtocols(SslProtocols.Tls12);
 
-                        // Please provide the file path of your certificate file.
-                        //var certificate = new X509Certificate(certificatePath, "");
-                        //o.Certificates = new List<X509Certificate> { certificate };
-                    }
-                )
+                    // Please provide the file path of your certificate file.
+                    o.WithTrustChain(caChain);
+                })
+
                 .Build();
 
             // Connect to MQTT broker
