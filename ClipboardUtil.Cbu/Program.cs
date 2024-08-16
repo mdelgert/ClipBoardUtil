@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using ClipboardUtil.Core;
 
 namespace ClipboardUtil.Cbu
@@ -9,24 +9,23 @@ namespace ClipboardUtil.Cbu
     {
         static async Task Main(string[] args)
         {
-            var clipboardMonitor = new ClipboardMonitor();
+            // Load configuration from appsettings.json
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .Build();
 
-            var cancellationTokenSource = new CancellationTokenSource();
+            var clipboardMqttPublisher = new ClipboardMqttPublisher(configuration);
 
-            Console.WriteLine("Starting clipboard monitoring. Press Enter to stop...");
-            var monitoringTask = clipboardMonitor.StartMonitoringAsync(cancellationTokenSource.Token);
+            var cts = new CancellationTokenSource();
 
-            Console.ReadLine(); // Wait for user input to stop
-            cancellationTokenSource.Cancel();
+            // Start the clipboard monitor and MQTT publisher
+            await clipboardMqttPublisher.StartAsync(cts.Token);
 
-            try
-            {
-                await monitoringTask;
-            }
-            catch (TaskCanceledException)
-            {
-                Console.WriteLine("Clipboard monitoring stopped.");
-            }
+            Console.WriteLine("Press any key to stop...");
+            Console.ReadKey();
+
+            cts.Cancel(); // Cancel the monitoring when the user presses a key
         }
     }
 }
