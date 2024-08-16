@@ -1,12 +1,12 @@
 ﻿using System.Security.Authentication;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
+using System.Text.Json;
 using Microsoft.Extensions.Configuration;
 using MQTTnet;
 using MQTTnet.Client;
 using MQTTnet.Protocol;
 
-namespace ClipboardUtil.MqttClient
+namespace ClipboardUtil.MqttPublisher
 {
     class Program
     {
@@ -59,7 +59,6 @@ namespace ClipboardUtil.MqttClient
                     // Please provide the file path of your certificate file.
                     o.WithTrustChain(caChain);
                 })
-
                 .Build();
 
             // Connect to MQTT broker
@@ -69,22 +68,23 @@ namespace ClipboardUtil.MqttClient
             {
                 Console.WriteLine("Connected to MQTT broker successfully.");
 
-                // Subscribe to a topic
-                await mqttClient.SubscribeAsync(topic);
-
-                // Callback function when a message is received
-                mqttClient.ApplicationMessageReceivedAsync += e =>
+                // Publish a message 100 times
+                for (int i = 0; i < 100; i++)
                 {
-                    Console.WriteLine($"Received message: {Encoding.UTF8.GetString(e.ApplicationMessage.PayloadSegment)}");
-                    return Task.CompletedTask;
-                };
+                    // Create the message model
+                    var messageModel = new MqttMessage
+                    {
+                        Id = i,
+                        Content = $"Message{i}",
+                        Timestamp = DateTime.UtcNow
+                    };
 
-                // Publish a message 10 times
-                for (int i = 0; i < 10; i++)
-                {
+                    // Serialize the message model to JSON
+                    var payload = JsonSerializer.Serialize(messageModel);
+
                     var message = new MqttApplicationMessageBuilder()
                         .WithTopic(topic)
-                        .WithPayload($"Hello, MQTT! Message number {i}")
+                        .WithPayload(payload)
                         .WithQualityOfServiceLevel(MqttQualityOfServiceLevel.AtLeastOnce)
                         .WithRetainFlag()
                         .Build();
@@ -113,5 +113,12 @@ namespace ClipboardUtil.MqttClient
         public string Username { get; set; }
         public string Password { get; set; }
         public string CertificatePath { get; set; }
+    }
+
+    public class MqttMessage
+    {
+        public int Id { get; set; }
+        public string Content { get; set; }
+        public DateTime Timestamp { get; set; }
     }
 }

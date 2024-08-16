@@ -34,7 +34,7 @@ namespace ClipboardUtil.MqttSubscriber
             // Create a MQTT client instance
             var mqttClient = factory.CreateMqttClient();
 
-            //TODO would need to convert PathTotext
+            // Convert cert file to text
             X509Certificate2Collection caChain = new X509Certificate2Collection();
             string cert = File.ReadAllText(certificatePath);
             caChain.ImportFromPem(cert);
