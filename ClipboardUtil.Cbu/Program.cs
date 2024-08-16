@@ -20,7 +20,8 @@ namespace ClipboardUtil.Cbu
             var cts = new CancellationTokenSource();
 
             // Start the clipboard monitor and MQTT publisher
-            await clipboardMqttPublisher.StartAsync(cts.Token);
+            //await clipboardMqttPublisher.StartAsync(cts.Token);
+            clipboardMqttPublisher.StartAsync(cts.Token);
 
             Console.WriteLine("Press any key to stop...");
             Console.ReadKey();
