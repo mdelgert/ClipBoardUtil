@@ -9,11 +9,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.Core", "Clipb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.Tests", "ClipboardUtil.Tests\ClipboardUtil.Tests.csproj", "{99B0E966-F002-4B3F-B267-EF008709EF79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.MqttClient", "ClipboardUtil.MqttClient\ClipboardUtil.MqttClient.csproj", "{EDA6DA6F-0CDB-425B-97E0-877938293915}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.MqttClient", "ClipboardUtil.MqttClient\ClipboardUtil.MqttClient.csproj", "{EDA6DA6F-0CDB-425B-97E0-877938293915}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.MqttSubscriber", "ClipboardUtil.MqttSubscriber\ClipboardUtil.MqttSubscriber.csproj", "{EE2387B3-A6A6-4F1E-8BBE-90E67BAE398E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.MqttSubscriber", "ClipboardUtil.MqttSubscriber\ClipboardUtil.MqttSubscriber.csproj", "{EE2387B3-A6A6-4F1E-8BBE-90E67BAE398E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.MqttPublisher", "ClipboardUtil.MqttPublisher\ClipboardUtil.MqttPublisher.csproj", "{3B1545DB-3D16-41E5-94DC-FF82371A52E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.MqttPublisher", "ClipboardUtil.MqttPublisher\ClipboardUtil.MqttPublisher.csproj", "{3B1545DB-3D16-41E5-94DC-FF82371A52E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3714B6E1-C89E-4D87-85F0-BB7167ABE30A}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
