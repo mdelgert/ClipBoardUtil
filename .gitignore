@@ -399,5 +399,5 @@ FodyWeavers.xsd
 
 # Misc.
 .idea/
-appsettings.json
+appsettings.Production.json
 *.crt
