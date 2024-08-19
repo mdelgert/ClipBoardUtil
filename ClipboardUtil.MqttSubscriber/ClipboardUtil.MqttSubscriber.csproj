@@ -13,10 +13,4 @@
     <PackageReference Include="MQTTnet" Version="4.3.6.1152" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="cert.crt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>

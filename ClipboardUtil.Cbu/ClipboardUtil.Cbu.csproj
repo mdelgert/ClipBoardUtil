@@ -15,10 +15,4 @@
     <ProjectReference Include="..\ClipboardUtil.Core\ClipboardUtil.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Update="cert.crt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
 </Project>
