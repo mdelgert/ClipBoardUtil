@@ -12,3 +12,7 @@ https://github.com/FGRibreau/dot-clipboard (dot-clipboard monitors your clipboar
 
 # For AI prompts examples
 https://github.com/danielmiessler/fabric/tree/main/patterns (has lots of AI prompts examples)
+
+# AI prompts shellgpt
+https://github.com/TheR1D/shell_gpt (most popular example)
+https://github.com/mattvr/ShellGPT (good prompts and examples)
