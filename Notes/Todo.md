@@ -12,3 +12,4 @@ Add run scripts functionality
 Add AI prompts support
 Add copy/paste support and test sendkey support
 Add Iot arduino subscribe keyboard support
+Test MAUI copy and paste support
