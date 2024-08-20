@@ -1,0 +1,30 @@
+﻿@page "/copypaste"
+@using Microsoft.JSInterop
+@inject IJSRuntime JSRuntime
+
+<PageTitle>Maui Clipboard Example</PageTitle>
+
+<h3>Clipboard Example</h3>
+
+<div>
+    <input @bind="TextInput" placeholder="Enter text to copy" />
+    <button @onclick="CopyToClipboard">Copy to Clipboard</button>
+</div>
+
+<p>@CopiedText</p>
+
+@code {
+    private string TextInput { get; set; } = string.Empty;
+    private string CopiedText { get; set; } = "Copied text will appear here";
+
+    private async Task CopyToClipboard()
+    {
+        // Copy the text to the clipboard using JavaScript interop
+        await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", TextInput);
+
+        // Retrieve the text from the clipboard to confirm
+        CopiedText = TextInput;
+    }
+}
+
+
