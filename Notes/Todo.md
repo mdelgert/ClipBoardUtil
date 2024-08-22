@@ -15,3 +15,6 @@ Add copy/paste support and test sendkey support
 Add Iot arduino subscribe keyboard support
 Test MAUI copy and paste support (done)
 Test Blazor docker
+Test Arduino device
+Pull boostrap themes
+Test function app docker support

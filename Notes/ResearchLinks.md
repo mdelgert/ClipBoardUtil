@@ -9,6 +9,7 @@ https://github.com/jedisct1/piknik (golang, crossplatform, copy paste over netwo
 https://github.com/asweigart/pyperclip (Python module for cross-platform clipboard functions)
 https://github.com/Jeric-X/SyncClipboard?tab=readme-ov-file (C#, recently updated, cross-Platform Cipboard Syncing Solution)
 https://github.com/FGRibreau/dot-clipboard (dot-clipboard monitors your clipboard and runs scripts based on its content)
+https://github.com/Willy-Kimura/SharpClipboard (C# A library for anonymously monitoring clipboard entries.)
 
 # For AI prompts examples
 https://github.com/danielmiessler/fabric/tree/main/patterns (has lots of AI prompts examples)
