@@ -1,4 +1,8 @@
-docker build -t clipboardutil-functionapp1 .
-docker run -p 8081:80 clipboardutil-functionapp1
+# Links
+https://learn.microsoft.com/en-us/dotnet/core/docker/build-container?tabs=windows&pivots=dotnet-8-0
+https://learn.microsoft.com/en-us/azure/azure-functions/functions-develop-vs-code?tabs=node-v4%2Cpython-v2%2Cisolated-process%2Cquick-create&pivots=programming-language-csharp
 
-http://localhost:8081/api/swagger/ui
+```bash
+dotnet publish -c Release
+```
+
