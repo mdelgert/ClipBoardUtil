@@ -30,9 +30,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.BlazorApp1", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.FunctionApp1", "ClipboardUtil.FunctionApp1\ClipboardUtil.FunctionApp1.csproj", "{DAEDC0D4-3F61-4D45-B548-F6F626491A64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.OllamaClient1", "ClipboardUtil.OllamaClient1\ClipboardUtil.OllamaClient1.csproj", "{067744DC-4F1B-438C-9996-B9888863BB5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.OllamaClient1", "ClipboardUtil.OllamaClient1\ClipboardUtil.OllamaClient1.csproj", "{067744DC-4F1B-438C-9996-B9888863BB5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClipboardUtil.OllamaClient2", "ClipboardUtil.OllamaClient2\ClipboardUtil.OllamaClient2.csproj", "{E4BD20DD-89F8-46E8-9BB3-CA701993EBDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.OllamaClient2", "ClipboardUtil.OllamaClient2\ClipboardUtil.OllamaClient2.csproj", "{E4BD20DD-89F8-46E8-9BB3-CA701993EBDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClipboardUtil.FunctionApp2", "ClipboardUtil.FunctionApp2\ClipboardUtil.FunctionApp2.csproj", "{4678A359-95F4-4286-AA87-00F57B67DDE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -262,6 +264,22 @@ Global
 		{E4BD20DD-89F8-46E8-9BB3-CA701993EBDB}.Release|x64.Build.0 = Release|Any CPU
 		{E4BD20DD-89F8-46E8-9BB3-CA701993EBDB}.Release|x86.ActiveCfg = Release|Any CPU
 		{E4BD20DD-89F8-46E8-9BB3-CA701993EBDB}.Release|x86.Build.0 = Release|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Debug|x64.Build.0 = Debug|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Debug|x86.Build.0 = Debug|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Release|ARM64.Build.0 = Release|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Release|x64.ActiveCfg = Release|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Release|x64.Build.0 = Release|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Release|x86.ActiveCfg = Release|Any CPU
+		{4678A359-95F4-4286-AA87-00F57B67DDE3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

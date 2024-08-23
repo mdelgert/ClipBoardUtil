@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "ClipboardUtil.FunctionApp2": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7211"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 34242,
+      "useSSL": false
+    }
+  }
+}
