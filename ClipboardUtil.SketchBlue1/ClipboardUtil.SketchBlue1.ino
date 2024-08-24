@@ -18,7 +18,7 @@ void loop() {
       Serial.print("Received: ");
       Serial.println(message);
       M5.dis.drawpix(0, 0x0000f0);  // BLUE
-      delay(100);
+      delay(500);
     }
 
     delay(50);

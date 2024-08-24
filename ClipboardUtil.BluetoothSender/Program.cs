@@ -42,7 +42,7 @@ namespace ClipboardUtil.BluetoothSender
             {
                 writer.AutoFlush = true;
 
-                for (int i = 0; i < 10000; i++)
+                for (int i = 0; i < 1000000; i++)
                 {
                     string message = $"Hello world! Message {i + 1}";
                     await writer.WriteLineAsync(message);
