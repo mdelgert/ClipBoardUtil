@@ -12,3 +12,6 @@ https://learn.microsoft.com/en-us/samples/browse/?expanded=dotnet&products=dotne
 https://github.com/dotnet/maui-samples
 https://github.com/dotnet/maui-samples/tree/main/8.0/UserInterface/SystemThemesDemo
 https://www.youtube.com/watch?v=NKw5gE2WAc4
+
+# Setup
+dotnet add package InTheHand.Net.Bluetooth

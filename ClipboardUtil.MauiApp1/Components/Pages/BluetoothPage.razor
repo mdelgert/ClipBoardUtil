@@ -1,0 +1,78 @@
+﻿@page "/bluetooth"
+@using InTheHand.Net.Sockets
+@using InTheHand.Net.Bluetooth
+@using Microsoft.Extensions.Logging
+@inject ILogger<BluetoothPage> Logger
+
+<PageTitle>Bluetooth Sender</PageTitle>
+
+<h3>Bluetooth Sender</h3>
+
+<p>
+    <button @onclick="SendMessage">Send Message</button>
+</p>
+
+<p>@statusMessage</p>
+
+@code {
+    private string statusMessage = "Press the button to send a message.";
+
+    private async Task SendMessage()
+    {
+        string deviceName = "ESP32_BT"; // The name of your ESP32 Bluetooth device
+
+        try
+        {
+            statusMessage = "Looking for device.....";
+
+            BluetoothClient client = new BluetoothClient();
+            BluetoothDeviceInfo device = null;
+
+            // Discover devices
+            var devices = client.DiscoverDevices();
+            foreach (var d in devices)
+            {
+                Logger.LogInformation($"Found device: {d.DeviceName}");
+                statusMessage = $"Found device: {d.DeviceName}";
+                if (d.DeviceName == deviceName)
+                {
+                    device = d;
+                    break;
+                }
+            }
+
+            if (device == null)
+            {
+                statusMessage = "Device not found.";
+                return;
+            }
+
+            // Connect to the device
+            client.Connect(device.DeviceAddress, BluetoothService.SerialPort);
+
+            // Send a message to the device
+            using (var stream = client.GetStream())
+            using (var writer = new StreamWriter(stream, System.Text.Encoding.ASCII))
+            {
+                writer.AutoFlush = true;
+
+                for (int i = 0; i < 100; i++)
+                {
+                    string message = $"Hello world MAUI! Message {i + 1}";
+                    await writer.WriteLineAsync(message);
+                    statusMessage = $"Sent: {message}";
+                    Logger.LogInformation($"Sent: {message}");
+                    await Task.Delay(1000); // 1-second delay
+                }
+            }
+
+            client.Close();
+        }
+        catch (Exception ex)
+        {
+            Logger.LogError(ex, "Error sending message");
+            statusMessage = $"Error: {ex.Message}";
+        }
+    }
+}
+
