@@ -18,9 +18,9 @@ WORKDIR /app
 COPY --from=build /app/out .
 
 # Set the environment variable
-#ENV ASPNETCORE_ENVIRONMENT=Development
-ENV ASPNETCORE_ENVIRONMENT=Staging
-#ENV ASPNETCORE_ENVIRONMENT=Production
+#ENV ASPNETCORE_ENVIRONMENT=Dev
+ENV ASPNETCORE_ENVIRONMENT=Stag
+#ENV ASPNETCORE_ENVIRONMENT=Prod
 
 # Expose the port the app runs on
 EXPOSE 8080
