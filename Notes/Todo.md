@@ -18,3 +18,4 @@ Test Blazor docker
 Test Arduino device
 Pull boostrap themes
 Test function app docker support
+Test maui bluetooth (example created not working requires android permissions)
