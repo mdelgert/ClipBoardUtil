@@ -71,6 +71,8 @@ namespace ClipboardUtil.MqttPublisher
                 // Publish a message 100 times
                 for (int i = 0; i < 100; i++)
                 {
+                    Console.WriteLine($"Sending message {i}");
+
                     // Create the message model
                     var messageModel = new MqttMessage
                     {
