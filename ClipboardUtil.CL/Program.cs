@@ -8,8 +8,8 @@ namespace ClipboardUtil.CL
         static void Main(string[] args)
         {
             // Load the appsettings.json and environment-specific file
-            var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Default";
-            //var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Production";
+            //var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Default";
+            var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Sat";
             //var environment = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT") ?? "Development";
 
             var configuration = new ConfigurationBuilder()
