@@ -44,7 +44,7 @@ namespace ClipboardUtil.BluetoothSender
 
                 for (int i = 0; i < 1000000; i++)
                 {
-                    string message = $"Hello world! Message {i + 1}";
+                    string message = $"Hello {i + 1}";
                     await writer.WriteLineAsync(message);
                     Console.WriteLine($"Sent: {message}");
 
