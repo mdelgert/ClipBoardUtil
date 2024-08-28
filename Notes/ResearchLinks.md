@@ -17,3 +17,9 @@ https://github.com/danielmiessler/fabric/tree/main/patterns (has lots of AI prom
 # AI prompts shellgpt
 https://github.com/TheR1D/shell_gpt (most popular example)
 https://github.com/mattvr/ShellGPT (good prompts and examples)
+
+# Dongle links
+https://github.com/TechRelief/ESP32-S3-OTG-KB-IO (ESP32-S3-OTG-KB-IO)
+https://www.youtube.com/watch?v=w2Sktpd_x6Y&list=PLzpQHur72fRwIrKFuXicBvjPrIdpV9_-o&index=8 (Ep.7 Creating a USB to Bluetooth Keyboard Dongle.)
+https://github.com/skawamoto0/USB-keyboard-over-Bluetooth (USB-keyboard-over-Bluetooth)
+https://github.com/1technophile/OpenMQTTGateway (OpenMQTTGateway aims to unify various technologies)
