@@ -1,0 +1,1 @@
+This code will start an access point that you can connect to with any Wi-Fi-enabled device. You can send a POST request to http://<ESP32_IP>/reset with a message in the body, and the ESP32 will print it to the serial monitor.

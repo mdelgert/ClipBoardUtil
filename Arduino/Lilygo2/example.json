@@ -1,0 +1,46 @@
+{
+    "wifi": {
+        "ssid": "lilygo1",
+        "password": "password"
+    },
+    "mqtt": {
+        "broker": "example.com",
+        "port": 8883,
+        "topic": "lilygo/topic/1",
+        "user": "user1",
+        "password": "password1",
+        "certificate": "1234567890abcdefghijklmnopqrstuvwxyz~@#$%^&*()_+?><|\/.,;'][=-`"
+    },
+    "device": {
+        "name": "device1",
+        "jiggler": true,
+        "setup_mode": false,
+        "keyboard_enable": true
+    },
+    "secrets": {
+        "user": {
+            "secret_1": "password1",
+            "secret_2": "password2",
+            "secret_3": "password3",
+            "secret_4": "password4",
+            "secret_5": "password5",
+            "secret_6": "password6",
+            "secret_7": "password7",
+            "secret_8": "password8",
+            "secret_9": "password9",
+            "secret_10": "password10"
+        },
+        "device": {
+            "secret_1": "password1",
+            "secret_2": "password2",
+            "secret_3": "password3",
+            "secret_4": "password4",
+            "secret_5": "password5",
+            "secret_6": "password6",
+            "secret_7": "password7",
+            "secret_8": "password8",
+            "secret_9": "password9",
+            "secret_10": "password10"
+        }
+    }
+}
