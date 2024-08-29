@@ -6,7 +6,7 @@ const char *password = "12345678";
 
 WebServer server(80);
 
-// Define a struct to hold the parsed data (not used in this simple version but kept for future use)
+// Define a struct to hold the parsed data (without the TFT section)
 struct Config {
   struct {
     String ssid;
