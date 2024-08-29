@@ -1,49 +1,17 @@
 #include <WiFi.h>
 #include <WebServer.h>
+#include "webpage.h"  // Include the webpage header file
+#include "Config.h"   // Include the header file with the struct definition
 
 const char *ssid = "ESP32_Access_Point";
 const char *password = "12345678";
 
 WebServer server(80);
 
-// Define a struct to hold the parsed data (without the TFT section)
-struct Config {
-  struct {
-    String ssid;
-    String password;
-  } wifi;
+void handleRoot() {
+  server.send(200, "text/html", webpage);
+}
 
-  struct {
-    String broker;
-    int port;
-    String topic;
-    String user;
-    String password;
-    String certificate;
-  } mqtt;
-
-  struct {
-    String name;
-    bool jiggler;
-    bool setup_mode;
-    bool keyboard_enable;
-  } device;
-
-  struct {
-    String secret_1;
-    String secret_2;
-    String secret_3;
-    String secret_4;
-    String secret_5;
-    String secret_6;
-    String secret_7;
-    String secret_8;
-    String secret_9;
-    String secret_10;
-  } user_secrets, device_secrets;
-};
-
-// Function to handle the /reset endpoint
 void handleReset() {
   if (server.hasArg("plain") == false) {
     server.send(400, "text/plain", "Body not received");
@@ -63,17 +31,15 @@ void handleReset() {
 void setup() {
   Serial.begin(115200);
 
-  // Set up the access point
   WiFi.softAP(ssid, password);
 
   IPAddress IP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
   Serial.println(IP);
 
-  // Define the endpoint
+  server.on("/", HTTP_GET, handleRoot);
   server.on("/reset", HTTP_POST, handleReset);
 
-  // Start the server
   server.begin();
   Serial.println("HTTP server started");
 }
